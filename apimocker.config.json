@@ -1,0 +1,32 @@
+{
+  "mockDirectory": "src/main/javascript/mocks/api",
+  "quiet": false,
+  "port": "7879",
+  "latency": 500,
+  "allowedDomains": ["*"],
+  "allowedHeaders": ["Content-Type"],
+
+  "webServices": {
+
+    "api/jobs": {
+      "verbs": ["get"],
+      "responses": {
+        "get": {
+          "httpStatus": 200,
+          "mockFile": "jobs/all.json"
+        }
+      }
+    },
+
+    "api/jobs/1": {
+      "verbs": ["get"],
+      "responses": {
+        "get": {
+          "httpStatus": 200,
+          "mockFile": "jobs/1.json"
+        }
+      }
+    }
+
+  }
+}

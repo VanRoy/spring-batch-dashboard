@@ -1,0 +1,49 @@
+
+<div pf-toolbar id="jobListToolbar" config="toolbarConfig">
+</div>
+
+<div class="list-group list-view-pf list-view-pf-equalized-column"
+     pf-list-view
+     items="items"
+     config="viewConfig"
+     action-buttons="actionButtons">
+
+    <div class="list-view-pf-left">
+        <span class="pficon pficon-ok list-view-pf-icon-md list-view-pf-icon-success"></span>
+    </div>
+    <div class="list-view-pf-body">
+        <div class="list-view-pf-description">
+            <div class="list-group-item-heading">
+                {{item.taskName}}
+            </div>
+            <div class="list-group-item-text">
+                {{item.jobExecution.startTime | date:'shortDate'}}
+                {{item.jobExecution.startTime | date:'mediumTime'}}
+                -
+                {{item.jobExecution.endTime | date:'shortDate'}}
+                {{item.jobExecution.endTime | date:'mediumTime'}}
+            </div>
+        </div>
+        <div class="list-view-pf-additional-info">
+            <div class="list-view-pf-additional-info-item">
+                <span class="pficon pficon-screen"></span>
+                <strong>{{item.jobExecution.stepExecutions.length}}</strong> Step
+            </div>
+            <div class="list-view-pf-additional-info-item">
+                <span class="pficon pficon-cluster"></span>
+                <strong>28</strong> Clusters
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+/*
+    // Equalize column width
+    $(document).ready(function () {
+        var widest = 0;
+        $('.list-view-pf-equalized-column .list-view-pf-additional-info-item').each( function() {
+            widest = $(this).width() > widest ? $(this).width() : widest;
+        }).width(widest);
+    });
+*/
+</script>

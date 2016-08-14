@@ -1,0 +1,11 @@
+spring:
+  data:
+    mongodb:
+      database: batch
+    rest:
+      base-path: /api
+
+logging:
+  level:
+    org.springframework.data: debug
+

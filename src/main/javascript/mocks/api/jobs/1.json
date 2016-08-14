@@ -1,0 +1,77 @@
+{
+  "taskName": "test-job",
+  "jobExecution": {
+    "id": 1,
+    "version": 2,
+    "jobParameters": {
+      "parameters": {
+        "param1": "value1",
+        "param2": "value2"
+      },
+      "empty": true
+    },
+    "jobInstance": {
+      "id": 1,
+      "version": 0,
+      "jobName": "test-job",
+      "instanceId": 1
+    },
+    "stepExecutions": [
+      {
+        "id": 2,
+        "version": 3,
+        "stepName": "test-step",
+        "status": "COMPLETED",
+        "readCount": 0,
+        "writeCount": 0,
+        "commitCount": 1,
+        "rollbackCount": 0,
+        "readSkipCount": 0,
+        "processSkipCount": 0,
+        "writeSkipCount": 0,
+        "startTime": 1467749704449,
+        "endTime": 1467749704475,
+        "lastUpdated": 1467749704475,
+        "executionContext": {
+          "dirty": true,
+          "empty": false
+        },
+        "exitStatus": {
+          "exitCode": "COMPLETED",
+          "exitDescription": "",
+          "running": false
+        },
+        "terminateOnly": false,
+        "filterCount": 0,
+        "failureExceptions": [],
+        "summary": "StepExecution: id=2, version=3, name=test-step, status=COMPLETED, exitStatus=COMPLETED, readCount=0, filterCount=0, writeCount=0 readSkipCount=0, writeSkipCount=0, processSkipCount=0, commitCount=1, rollbackCount=0",
+        "jobExecutionId": 1,
+        "skipCount": 0,
+        "jobParameters": {
+          "parameters": {},
+          "empty": true
+        }
+      }
+    ],
+    "status": "COMPLETED",
+    "startTime": 1467749704433,
+    "createTime": 1467749704424,
+    "endTime": 1467749704486,
+    "lastUpdated": 1467749704486,
+    "exitStatus": {
+      "exitCode": "COMPLETED",
+      "exitDescription": "",
+      "running": false
+    },
+    "executionContext": {
+      "dirty": false,
+      "empty": true
+    },
+    "failureExceptions": [],
+    "jobConfigurationName": null,
+    "running": false,
+    "jobId": 1,
+    "stopping": false,
+    "allFailureExceptions": []
+  }
+}
