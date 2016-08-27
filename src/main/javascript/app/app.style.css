@@ -1,0 +1,137 @@
+table {
+    font-size: 12px;
+}
+
+strong {
+    font-weight: 600;
+}
+
+.form-readonly .form-group {
+    margin-bottom: 0;
+}
+
+.form-readonly .control-label {
+    text-align: left;
+}
+
+.form-readonly .form-control {
+    border: 0;
+    color: #363636;
+    background-color: transparent;
+    cursor: default;
+}
+
+.job-icon-big {
+    border-radius: 50%;
+    font-size: 5em;
+    background-color: #f5f5f5;
+    height: 100px;
+    line-height: 100px;
+    width: 100px;
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+.absolute-right {
+    display: inline-block;
+    position: absolute;
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.list-group-item-compound-expand.active, .list-group-item-simple-expand.active {
+    color: #555;
+    margin-top: -1px;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    border: 1px solid #9c9c9c !important
+}
+
+.list-group-item-compound-expand.active .list-group-item, .list-group-item-simple-expand.active .list-group-item {
+    background-color: #ededed;
+    border-top: 1px solid #9c9c9c !important;
+    margin-top: -1px
+}
+
+.list-group-item-simple-expand .list-group-item {
+    cursor: pointer
+}
+
+.list-view-pf-expand {
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    margin-top: 20px;
+    padding: 3px 10px 3px 0;
+    cursor: pointer;
+    border-right: 1px solid #d1d1d1;
+}
+
+.list-view-pf-expand-close:hover, .list-view-pf-expand-left-list .active, .list-view-pf-expand.active, .list-view-pf-expand:hover {
+    color: #0088ce
+}
+
+.list-view-pf-additional-info-item .list-view-pf-expand {
+    margin: 0;
+    padding: 0
+}
+
+.list-view-pf-expand .fa-angle-right {
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 2px;
+    margin-right: 5px;
+    width: 10px
+}
+
+.list-view-pf-expand.active:after {
+    width: 100%;
+    border-bottom: solid 2px #0088ce;
+    content: ''
+}
+
+.list-view-pf-expand-container {
+    border-top: solid 1px #9c9c9c;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    margin-top: -1px
+}
+
+.list-view-pf-expand-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 999;
+    cursor: pointer
+}
+
+.list-view-pf-expand-close .fa {
+    cursor: pointer;
+    font-size: 16px
+}
+
+.list-view-pf-expand-chart {
+    margin: 20px 0
+}
+
+.list-view-pf-expand-info {
+    padding-left: 0
+}
+
+.list-view-pf-expand-info li {
+    list-style: none;
+    padding: 5px 0
+}
+
+.list-view-pf-expand-info strong {
+    width: 100px;
+    display: inline-block
+}
+
+.list-view-pf-expand-left-list {
+    margin-top: 10px
+}

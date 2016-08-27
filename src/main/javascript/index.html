@@ -1,96 +1,42 @@
-<!DOCTYPE html class="layout-pf layout-pf-fixed transitions">
-<!--[if lt IE 7]>      <html lang="en" class="layout-pf layout-pf-fixed transitions no-js lt-ie9 lt-ie8 lt-ie7" ng-app="application"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" class="layout-pf layout-pf-fixed transitions no-js lt-ie9 lt-ie8" ng-app="application"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" class="layout-pf layout-pf-fixed transitions no-js lt-ie9" ng-app="application"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" class="layout-pf layout-pf-fixed transitions no-js" ng-app="application"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="description" content="An AngularJS application scaffold.">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="shortcut icon" type="image/png" href="/favicon.ico">
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html lang="en-us" class="ie9 layout-pf layout-pf-fixed"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en-us" class="layout-pf layout-pf-fixed">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- build:css /css/styles.css -->
-        <link rel="stylesheet" href="/bower_components/patternfly/dist/css/patternfly.min.css">
-        <link rel="stylesheet" href="/bower_components/patternfly/dist/css/patternfly-additions.min.css">
-        <link rel="stylesheet" href="/bower_components/angular-patternfly/dist/styles/angular-patternfly.min.css" />
+    <title><%= webpackConfig.metadata.title %></title>
 
-        <link rel="stylesheet" href="/css/app.css">
-        <!-- endbuild -->
+    <meta name="description" content="<%= webpackConfig.metadata.title %>">
 
-        <title>Spring Batch Dashboard</title>
+    <% if (webpackConfig.htmlElements.headTags) { %>
+    <!-- Configured Head Tags  -->
+    <%= webpackConfig.htmlElements.headTags %>
+    <% } %>
 
-        <base href="/">
+    <!-- webpack bundled css -->
+    <link rel="stylesheet" href="/assets/css/patternfly.min.css">
+    <link rel="stylesheet" href="/assets/css/patternfly-additions.min.css">
 
-    </head>
-    <body ng-cloak>
-        <!--[if lt IE 7]>
-        <p class="chromeframe">
-            You are using an <strong>outdated</strong> browser.' +
-            'Please <a href="http://browsehappy.com/">upgrade your browser</a> ' +
-            'or <a href="http://www.google.com/chromeframe/?redirect=true"> ' +
-            'activate Google Chrome Frame</a> to improve your experience.
-        </p>
-        <![endif]-->
+    <!-- base url -->
+    <base href="<%= webpackConfig.metadata.baseUrl %>">
 
-        <!-- Header, main content area and footer -->
-        <div ng-include="'app/view/header.tpl.html'" include-replace></div>
-        <div ng-include="'app/view/nav.tpl.html'" include-replace></div>
-        <div ui-view class="container-pf-nav-pf-vertical container-pf-nav-pf-vertical-with-secondary ">
-        </div>
-        <div ng-include="'app/view/footer.tpl.html'" include-replace></div>
+</head>
 
-        <!-- build:js /js/vendor.js -->
-        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="/bower_components/matchHeight/dist/jquery.matchHeight-min.js"></script>
+<body>
 
-        <script src="/bower_components/c3/c3.min.js"></script>
-        <script src="/bower_components/d3/d3.min.js"></script>
+<app>
+    Loading...
+</app>
 
-        <script src="/bower_components/moment/min/moment.min.js"></script>
-        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="/bower_components/patternfly/dist/js/patternfly.min.js"></script>
+<% if (webpackConfig.metadata.isDevServer && webpackConfig.metadata.HMR !== true) { %>
+<!-- Webpack Dev Server reload -->
+<script src="/webpack-dev-server.js"></script>
+<% } %>
 
-        <!--
-        <script src="/bower_components/bootstrap-combobox/js/bootstrap-combobox.js"></script>
-        <script src="/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-        <script src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
--->
 
-        <script src="/bower_components/angular/angular.js"></script>
-        <script src="/bower_components/angular-resource/angular-resource.js"></script>
-        <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
-        <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-        <script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
-        <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-        <script src="/bower_components/angular-patternfly/dist/angular-patternfly.min.js"></script>
-        <!-- endbuild -->
-
-        <!-- build:js /js/app.js -->
-        <script src="/app/app.js"></script>
-        <script src="/app/config/config.js"></script>
-        <script src="/app/directive/include-replace.js"></script>
-        <script src="/app/module/template/template.js"></script>
-        <script src="/app/module/job/config/config.js"></script>
-        <script src="/app/module/job/job.js"></script>
-        <script src="/app/module/job/service/job-rest.js"></script>
-        <!-- endbuild -->
-    </body>
-    <script>
-        /*
-        $(document).ready(function() {
-            // matchHeight the contents of each .card-pf and then the .card-pf itself
-            $(".row-cards-pf > [class*='col'] > .card-pf .card-pf-title").matchHeight();
-            $(".row-cards-pf > [class*='col'] > .card-pf > .card-pf-body").matchHeight();
-            $(".row-cards-pf > [class*='col'] > .card-pf > .card-pf-footer").matchHeight();
-            $(".row-cards-pf > [class*='col'] > .card-pf").matchHeight();
-
-            // initialize tooltips
-            $('[data-toggle="tooltip"]').tooltip();
-
-            // Initialize the vertical navigation
-            $().setupVerticalNavigation(true);
-        });
-        */
-    </script>
+</body>
 </html>

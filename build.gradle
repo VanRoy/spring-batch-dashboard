@@ -1,35 +1,32 @@
 buildscript {
 	ext {
-		springBootVersion = '1.4.0.RC1'
-        gruntPluginVersion = '0.13'
+		springBootVersion = '1.4.0.RELEASE'
+        nodePluginVersion = '0.13'
 	}
 	repositories {
 		mavenCentral()
 		maven { url "https://plugins.gradle.org/m2/" }
-		maven { url "https://repo.spring.io/snapshot" }
-		maven { url "https://repo.spring.io/milestone" }
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("com.moowork.gradle:gradle-grunt-plugin:${gruntPluginVersion}")
-        classpath("com.moowork.gradle:gradle-node-plugin:${gruntPluginVersion}")
+        classpath("com.moowork.gradle:gradle-node-plugin:${nodePluginVersion}")
 	}
 }
 
 apply plugin: 'java'
 apply plugin: 'spring-boot'
-apply plugin: 'com.moowork.grunt'
+apply plugin: 'com.moowork.node'
 
 jar {
 	baseName = 'springbatch-dashboard'
 	version = '0.0.1-SNAPSHOT'
 }
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
-	maven { url "https://repo.spring.io/milestone" }
 }
 
 dependencies {
@@ -50,20 +47,4 @@ bootRepackage {
 	excludeDevtools = true
 }
 
-// makes sure on each build that grunt is installed
-grunt_build.dependsOn installGrunt
-
-// processes your package.json before running grunt build
-grunt_build.dependsOn npmInstall
-
-grunt_build.dependsOn processResources
-
-// runs "grunt build" as part of your gradle build
-jar.dependsOn grunt_build
-bootRun.dependsOn grunt_build
-clean.dependsOn grunt_clean
-
-grunt {
-	// Whether colors should output on the terminal
-	colors = true
-}
+processResources.dependsOn 'npm_run_build'//:prod'
