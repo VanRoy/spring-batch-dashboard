@@ -128,7 +128,7 @@ module.exports = webpackMerge(commonConfig, {
       'process.env': {
         'ENV': JSON.stringify(METADATA.ENV),
         'NODE_ENV': JSON.stringify(METADATA.ENV),
-        'HMR': METADATA.HMR,
+        'HMR': METADATA.HMR
       }
     }),
 
@@ -157,7 +157,7 @@ module.exports = webpackMerge(commonConfig, {
 
 
       beautify: false, //prod
-      mangle: { screw_ie8 : true }, //prod
+      mangle: { screw_ie8 : true, keep_fnames: true }, //prod
       compress: { screw_ie8: true }, //prod
       comments: false //prod
     }),
@@ -170,8 +170,8 @@ module.exports = webpackMerge(commonConfig, {
      */
 
     new NormalModuleReplacementPlugin(
-      /angular2-hmr/,
-      helpers.root('config/modules/angular2-hmr-prod.js')
+        /angular2-hmr/,
+        helpers.root('config/modules/angular2-hmr-prod.js')
     ),
 
     /**

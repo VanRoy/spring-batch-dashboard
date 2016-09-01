@@ -4,10 +4,7 @@
 import {Component, ViewEncapsulation} from "@angular/core";
 import {Header} from "./header";
 import {Footer} from "./footer";
-import {Nav} from "./nav";
-import "./rxjs-operators";
-
-// Add the RxJS Observable operators we need in this app.
+import {Navigation} from "./navigation";
 
 /*
  * App Component
@@ -17,7 +14,7 @@ import "./rxjs-operators";
     selector: 'app',
     encapsulation: ViewEncapsulation.None,
     directives: [
-        Header, Footer, Nav
+        Header, Footer, Navigation
     ],
     styleUrls: [
         './app.style.css'

@@ -24,7 +24,6 @@ export class Footer {
     }
 
     ngOnInit() {
-        console.log('Footer component init');
     }
 
 }
