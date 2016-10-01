@@ -21,6 +21,24 @@ strong {
     cursor: default;
 }
 
+.navbar-brand-icon {
+    height: 35px;
+}
+
+.navbar-brand-text {
+    font-size: 18px;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.navbar-brand-text-first {
+    font-weight: 500;
+}
+
+.navbar-brand-text-second {
+    font-weight: 300;
+}
+
 .job-icon-big {
     border-radius: 50%;
     font-size: 5em;
