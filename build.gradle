@@ -53,8 +53,5 @@ node {
 	npmVersion = '3.10.8'
 }
 
-task npmBuildProd(type: NpmTask) {
-	args = ['run', 'build:prod']
-}
-
-processResources.dependsOn npmBuildProd
+npm_run_build.dependsOn npmSetup
+processResources.dependsOn npm_run_build
