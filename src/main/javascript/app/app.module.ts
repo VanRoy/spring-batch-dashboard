@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -14,6 +13,9 @@ import { ROUTES } from './app.routes';
 import { App } from './app.component';
 import { AppState } from './app.service';
 import { Home } from './home';
+import { Header } from './header';
+import { Footer } from './footer';
+import { Navigation } from './navigation';
 import { NoContent } from './no-content';
 import { JobList, JobDetail, JobDetailResolve } from "./job";
 import { JobService } from "./job/job.service";
@@ -35,13 +37,16 @@ const APP_PROVIDERS = [
         Home,
         NoContent,
         JobList,
-        JobDetail
+        JobDetail,
+        Header,
+        Footer,
+        Navigation
     ],
     imports: [ // import Angular's modules
         BrowserModule,
         FormsModule,
         HttpModule,
-        RouterModule.forRoot(ROUTES, { useHash: true })
+        RouterModule.forRoot(ROUTES)
     ],
     providers: [ // expose our Services and Providers into Angular's dependency injection
         ENV_PROVIDERS,
@@ -50,25 +55,4 @@ const APP_PROVIDERS = [
 })
 export class AppModule {
     constructor(public appRef: ApplicationRef, public appState: AppState) {}
-    hmrOnInit(store) {
-        if (!store || !store.state) return;
-        console.log('HMR store', store);
-        this.appState._state = store.state;
-        this.appRef.tick();
-        delete store.state;
-    }
-    hmrOnDestroy(store) {
-        const cmpLocation = this.appRef.components.map(cmp => cmp.location.nativeElement);
-        // recreate elements
-        const state = this.appState._state;
-        store.state = state;
-        store.disposeOldHosts = createNewHosts(cmpLocation);
-        // remove styles
-        removeNgStyles();
-    }
-    hmrAfterDestroy(store) {
-        // display new elements
-        store.disposeOldHosts();
-        delete store.disposeOldHosts;
-    }
 }

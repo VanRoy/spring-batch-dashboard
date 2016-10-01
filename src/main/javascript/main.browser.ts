@@ -3,8 +3,7 @@
  */
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { decorateModuleRef } from './app/environment';
-import { ApplicationRef } from '@angular/core';
-import { bootloader } from '@angularclass/hmr';
+
 /*
  * App Module
  * our top level module that holds all of our components
@@ -19,8 +18,10 @@ export function main(): Promise<any> {
         .bootstrapModule(AppModule)
         .then(decorateModuleRef)
         .catch(err => console.error(err));
-
 }
 
-
-bootloader(main);
+if (document.readyState === 'complete') {
+    main()
+} else {
+    document.addEventListener('DOMContentLoaded', main);
+}

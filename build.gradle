@@ -47,4 +47,14 @@ bootRepackage {
 	excludeDevtools = true
 }
 
-processResources.dependsOn 'npm_run_build'//:prod'
+node {
+	download = true
+	version = '4.6.0'
+	npmVersion = '3.10.8'
+}
+
+task npmBuildProd(type: NpmTask) {
+	args = ['run', 'build:prod']
+}
+
+processResources.dependsOn npmBuildProd

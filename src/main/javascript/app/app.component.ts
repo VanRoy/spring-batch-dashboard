@@ -13,9 +13,6 @@ import {Navigation} from "./navigation";
 @Component({
     selector: 'app',
     encapsulation: ViewEncapsulation.None,
-    directives: [
-        Header, Footer, Navigation
-    ],
     styleUrls: [
         './app.style.css'
     ],
