@@ -2,10 +2,11 @@
 // Angular 2
 // rc2 workaround
 import { enableDebugTools, disableDebugTools } from '@angular/platform-browser';
-import { enableProdMode, ApplicationRef } from '@angular/core';
+import { enableProdMode, ApplicationRef, LOCALE_ID } from '@angular/core';
 // Environment Providers
 let PROVIDERS = [
     // common env directives
+    { provide: LOCALE_ID, useValue: document.documentElement.lang }
 ];
 
 // Angular debug tools in the dev console

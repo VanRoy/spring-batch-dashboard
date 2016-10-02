@@ -132,21 +132,20 @@
                             {{job.taskName}}
                         </div>
                         <div class="list-group-item-text">
-                            {{job.jobExecution.startTime | date:'shortDate'}}
-                            {{job.jobExecution.startTime | date:'mediumTime'}}
-                            -
-                            {{job.jobExecution.endTime | date:'shortDate'}}
-                            {{job.jobExecution.endTime | date:'mediumTime'}}
+                            <span class="list-group-item-job-start-date">
+                                {{job.jobExecution.startTime | date:'shortDate'}}
+                                {{job.jobExecution.startTime | date:'mediumTime'}}
+                            </span>
+                            <span class="list-group-item-job-end-date" *ngIf="job.jobExecution.endTime">
+                                {{job.jobExecution.endTime | date:'shortDate'}}
+                                {{job.jobExecution.endTime | date:'mediumTime'}}
+                            </span>
                         </div>
                     </div>
                     <div class="list-view-pf-additional-info">
                         <div class="list-view-pf-additional-info-item">
                             <span class="pficon pficon-screen"></span>
                             <strong>{{job.jobExecution.stepExecutions.length}}</strong> Step
-                        </div>
-                        <div class="list-view-pf-additional-info-item">
-                            <span class="pficon pficon-cluster"></span>
-                            <strong>28</strong> Clusters
                         </div>
                     </div>
                 </div>

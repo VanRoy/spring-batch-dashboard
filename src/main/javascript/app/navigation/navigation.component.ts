@@ -15,7 +15,7 @@ export class Navigation {
     ngOnInit() {
         this.navItems = [
             {title: 'Dashboard', state: 'home', sref: 'home', icon: 'fa fa-dashboard'},
-            {title: 'Jobs', state: 'jobs', sref: 'jobs', icon: 'fa fa-dashboard'}
+            {title: 'Jobs', state: 'jobs', sref: 'jobs', icon: 'fa fa-cubes'}
         ];
     }
 
