@@ -1,20 +1,15 @@
-import {Component} from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'home',  // <home></home>
-    styleUrls: ['./home.style.css'],
-    templateUrl: './home.template.html'
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class Home {
+export class HomeComponent implements OnInit {
 
-    // TypeScript public modifiers
-    constructor() {
+  constructor() { }
 
-    }
-
-    ngOnInit() {
-        console.log('hello `Home` component');
-        // this.title.getData().subscribe(data => this.data = data);
-    }
+  ngOnInit() {
+  }
 
 }

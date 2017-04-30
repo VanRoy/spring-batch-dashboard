@@ -1,5 +1,4 @@
-// Observable Version
-import {Injectable} from "@angular/core";
+import { Injectable } from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs/Rx";
 
@@ -9,7 +8,7 @@ export class JobService {
     constructor(private http:Http) {
     }
 
-    private jobsUrl = 'api/jobs/';  // URL to web API
+    private jobsUrl = 'api/v1/jobs/';  // URL to web API
 
     getJobs():Observable<Object[]> {
         return this.http.get(this.jobsUrl)
@@ -36,4 +35,5 @@ export class JobService {
         console.error(errMsg); // log to console instead
         return Observable.throw(errMsg);
     }
+
 }

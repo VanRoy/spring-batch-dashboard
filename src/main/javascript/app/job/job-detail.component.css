@@ -1,0 +1,42 @@
+.job-detail .form-readonly .form-group {
+    margin-bottom: 0;
+}
+
+.job-detail .form-readonly .control-label {
+    text-align: left;
+}
+
+.job-detail .form-readonly .form-control {
+    border: 0;
+    color: #363636;
+    background-color: transparent;
+    cursor: default;
+}
+
+.job-icon-big {
+    border-radius: 50%;
+    font-size: 5em;
+    height: 100px;
+    line-height: 100px;
+    width: 100px;
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+.absolute-right {
+    display: inline-block;
+    position: absolute;
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.list-view-pf-left .fa.list-view-pf-icon-sm,.list-view-pf-left .pficon.list-view-pf-icon-sm-trans {
+    font-size: 1.4em;
+    height: 30px;
+    line-height: 30px;
+    width: 30px
+}

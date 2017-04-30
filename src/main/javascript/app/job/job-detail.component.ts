@@ -1,13 +1,14 @@
-import {Component} from "@angular/core";
-import {ActivatedRoute} from "@angular/router";
-import {JobService} from "./job.service";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { JobService } from "./job.service";
 
 @Component({
-    selector: 'job',  // <home></home>
+    selector: 'job',
     providers: [JobService],
-    templateUrl: './job-detail.template.html'
+    templateUrl: './job-detail.component.html',
+    styleUrls: ['./job-detail.component.css']
 })
-export class JobDetail {
+export class JobDetailComponent {
 
     icon;
     job;

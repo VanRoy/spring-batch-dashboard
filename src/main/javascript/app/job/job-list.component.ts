@@ -1,22 +1,22 @@
-import {Component} from "@angular/core";
-import {JobService} from "./job.service";
+import { Component, OnInit } from '@angular/core';
+import { JobService } from "./job.service";
 
 @Component({
-    selector: 'jobs',  // <home></home>
-    providers: [JobService],
-    templateUrl: './job-list.template.html'
+  selector: 'jobs',
+  providers: [JobService],
+  templateUrl: './job-list.component.html',
+  styleUrls: ['./job-list.component.css']
 })
-export class JobList {
+export class JobListComponent implements OnInit {
 
-    errorMessage:string;
-    jobs:Object[];
+  errorMessage:string;
+  jobs:Object[];
 
-    constructor(private jobService:JobService) {
-    }
+  constructor(private jobService:JobService) { }
 
-    ngOnInit() {
-        this.getJobs();
-    }
+  ngOnInit() {
+    this.getJobs();
+  }
 
     getJobs() {
         this.jobService.getJobs()
@@ -41,5 +41,4 @@ export class JobList {
 
         return "pficon-info list-view-pf-icon-info";
     }
-
 }

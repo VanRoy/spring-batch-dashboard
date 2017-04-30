@@ -1,0 +1,20 @@
+{
+  "mockDirectory": "./mocks",
+  "quiet": false,
+  "port": "7878",
+  "latency": 50,
+  "logRequestHeaders": false,
+  "basepath": "/api/v1",
+  "webServices": {
+    "jobs": {
+      "mockFile": "jobs/all.json",
+      "verbs": ["get"]
+     },
+      "jobs/:id": {
+        "mockFile": "jobs/job.json",
+        "verbs": ["get"],
+        "switch": "id"
+      }
+
+  }
+}

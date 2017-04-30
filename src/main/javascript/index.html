@@ -1,42 +1,22 @@
 <!DOCTYPE html>
-<!--[if IE 9]>
-<html lang="fr-fr" class="ie9 layout-pf layout-pf-fixed"><![endif]-->
+<!--[if IE 9]><html lang="en-us" class="ie9 layout-pf layout-pf-fixed"><![endif]-->
 <!--[if gt IE 9]><!-->
-<html lang="fr-fr" class="layout-pf layout-pf-fixed">
+<html lang="en-us" class="layout-pf layout-pf-fixed">
+<!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Spring Batch Dashboard</title>
+  <meta name="description" content="">
 
-    <title><%= webpackConfig.metadata.title %></title>
+  <base href="/">
 
-    <meta name="description" content="<%= webpackConfig.metadata.title %>">
-
-    <% if (webpackConfig.htmlElements.headTags) { %>
-    <!-- Configured Head Tags  -->
-    <%= webpackConfig.htmlElements.headTags %>
-    <% } %>
-
-    <!-- webpack bundled css -->
-    <link rel="stylesheet" href="/assets/css/patternfly.min.css">
-    <link rel="stylesheet" href="/assets/css/patternfly-additions.min.css">
-
-    <!-- base url -->
-    <base href="<%= webpackConfig.metadata.baseUrl %>">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-
 <body>
-
-<app>
-    Loading...
-</app>
-
-<% if (webpackConfig.metadata.isDevServer) { %>
-<!-- Webpack Dev Server reload -->
-<script src="/webpack-dev-server.js"></script>
-<% } %>
-
-
+  <app>Loading...</app>
 </body>
 </html>

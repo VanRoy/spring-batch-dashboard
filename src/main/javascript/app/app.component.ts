@@ -1,29 +1,9 @@
-/*
- * Angular 2 decorators and services
- */
-import {Component, ViewEncapsulation} from "@angular/core";
-import {Header} from "./header";
-import {Footer} from "./footer";
-import {Navigation} from "./navigation";
+import { Component } from '@angular/core';
 
-/*
- * App Component
- * Top Level Component
- */
 @Component({
-    selector: 'app',
-    encapsulation: ViewEncapsulation.None,
-    styleUrls: [
-        './app.style.css'
-    ],
-    templateUrl: 'app.template.html'
+  selector: 'app',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class App {
-
-    constructor() {
-    }
-
-    ngOnInit() {
-    }
-
+export class AppComponent {
 }
