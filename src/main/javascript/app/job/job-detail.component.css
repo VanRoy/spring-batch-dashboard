@@ -34,7 +34,7 @@
     transform: translateX(-100%);
 }
 
-.list-view-pf-left .fa.list-view-pf-icon-sm,.list-view-pf-left .pficon.list-view-pf-icon-sm-trans {
+.list-view-pf-left .fa.list-view-pf-icon-sm, .list-view-pf-left .pficon.list-view-pf-icon-sm-trans {
     font-size: 1.4em;
     height: 30px;
     line-height: 30px;
